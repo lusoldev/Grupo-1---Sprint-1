@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencias Banking</title>
+</head>
+<style>
+
+div{
+    border-radius: 5px;
+    text-align: center;}
+
+
+ label{
+    font-size: large;
+ }
+
+    input[type ="text"] {
+        background: white;
+        border-radius: 5px;
+        border-color: white;
+        font-size: large;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 10px 50px;}
+
+    input[type ="number"] 
+        {background: white;
+        border-radius: 5px;
+        border-color: white;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        text-decoration: rgb(108, 126, 141);
+        padding: 10px 50px;}
+
+
+
+
+    input[type = "button"]
+    {padding: 10px 50px;
+        border-radius: 5px;
+        border-color:#0283E9;
+        font-size: large;
+        color: white;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background:#0283E9}
+
+        body{
+            text-align: center;}
+
+        #opciones{
+            padding: 10px 50px;
+            border-radius: 5px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: large;
+        }
+    
+    form{
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.829);
+            width: 1000px;
+            text-align: center;}
+
+
+</style>
+
+
+
+<body>
+    <div>
+            <h1>Transferencias</h1>
+            <form action="seleccion">Seleccione una opción ;
+            <select name="opciones" id="opciones">Opciones 
+            <option value="cbu">CBU</option>
+            <option value="cvu">CVU</option>
+            <option value="alias">Alias</option>
+            <option value="numero de celular">Numero de celular</option>
+            </select>
+            <p>
+            <label for="ingresa alias cvu o cbu">Ingrese Alias CBU,CVU o celular</label>
+            <input type="text" name="dato" id="dato">
+            </p>
+            <p>
+                <label for="ingresar monto">Ingrese el monto:</label>
+            <input type="number">
+            </p>
+            <p>
+            <input type="button" value="Aceptar">
+            <input type="button" value="Cancelar">
+            </p>
+        </form>
+    </div>
+    </body>
+</html>
