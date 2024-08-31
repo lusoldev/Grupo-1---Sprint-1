@@ -7,8 +7,6 @@
 }
 
 .pagos h2 {
-	text-align: center;
-	color: #333333;
 	margin-bottom: 20px;
 }
 
@@ -96,26 +94,25 @@
 	}
 }
 
-/*css al mensaje de pagos */ 
+/*css al mensaje de pagos */
 .error {
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    background-color: #f00; 
-    color: #fff;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #f00;
+	color: #fff;
 }
 
 .exito {
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    background-color: #28a745; 
-    color: #fff;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #28a745;
+	color: #fff;
 }
-

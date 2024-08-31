@@ -47,6 +47,15 @@ body {
 	font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #0239d6; /* Azul oscuro */
+}
+
 /* !MAIN-CONTENT */
 .main-content {
 	grid-row: 2;
