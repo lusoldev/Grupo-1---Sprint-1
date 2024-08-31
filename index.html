@@ -3,11 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Descripción bonita" />
 		<title>Banking | Tu home banking de confianza</title>
 		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./css/main.css" />
 		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.ico" />
 		<!-- Iconos menus -->
-
 		<link
 			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
 			rel="stylesheet" />
@@ -57,24 +58,23 @@
 					>Ingreso <span class="plus-sign">+</span></a
 				>
 				<li>
-					<a href="index.html" data-form="inicio">
-						<span class="material-symbols-outlined icon "> home</span> Inicio
-					</a>
+					<a href="index.html"> <span class="material-symbols-outlined icon "> home</span> Inicio </a>
 				</li>
 				<li>
-					<a href="transferencias.html" data-form="transferencias">
+					<a href="transferencias.html">
 						<span class="material-symbols-outlined  icon ">account_balance</span> Transferencias
 					</a>
 				</li>
 				<li>
-					<a href="pagos.html" data-form="pagos">
+					<a href="pagos.html">
 						<span class="material-symbols-outlined  icon">order_approve </span>Pagos de Facturas
 					</a>
 				</li>
 				<li>
-					<a href="prestamos.html" data-form="prestamos"
-						><span class="material-symbols-outlined  icon">paid</span> Solicitar Préstamo
-					</a>
+					<a href="prestamos.html"><span class="material-symbols-outlined  icon">paid</span> Solicitar Préstamo </a>
+				</li>
+				<li>
+					<a href="conversor.html"><span class="material-symbols-outlined  icon">currency_exchange</span> Conversor </a>
 				</li>
 				<li>
 					<a href="simulador.html" data-form="prestamos"
@@ -84,25 +84,30 @@
 			</ul>
 		</aside>
 		<main class="main-content" id="main-content">
-			<div class="user-dashboard">
-				<h2>Panel de Usuario</h2>
-				<div class="dashboard-section">
-					<h3>Saldo Actual</h3>
-					<p id="user-balance">$0.00</p>
+			<section class="user-dashboard">
+				<div class="user-dashboard__hello">
+					<span>Bienvenido de vuelta</span>
 				</div>
-				<div class="dashboard-section">
-					<h3>Historial de Transferencias</h3>
+				<div class="user-dashboard__header">
+					<h1>Banking, tu home banking con todo en un solo lugar</h1>
+				</div>
+				<div class="user-dashboard__section">
+					<h2>Saldo Actual</h2>
+					<p class="user-balance" id="user-balance">$0.00</p>
+				</div>
+				<div class="user-dashboard__section">
+					<h2>Historial de Transferencias</h2>
 					<ul id="transfer-history"></ul>
 				</div>
-				<div class="dashboard-section">
-					<h3>Pagos Realizados</h3>
+				<div class="user-dashboard__section">
+					<h2>Pagos Realizados</h2>
 					<ul id="payment-history"></ul>
 				</div>
-				<div class="dashboard-section">
-					<h3>Préstamos Solicitados</h3>
+				<div class="user-dashboard__section">
+					<h2>Préstamos Solicitados</h2>
 					<ul id="loan-history"></ul>
 				</div>
-			</div>
+			</section>
 		</main>
 		<footer>
 			<div class="footer-contenido">

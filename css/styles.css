@@ -65,47 +65,11 @@ h6 {
 	background-color: #f5f6fa;
 	border-start-start-radius: 10px;
 }
-.main-content .user-dashboard {
-	display: flex;
-	align-items: stretch;
-	justify-content: space-between;
-	flex-direction: column;
-	min-height: 100%;
-	padding: 64px 32px;
-	gap: 16px;
-	margin: 20px auto;
-	background-color: #fff;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.main-content .dashboard-section h3 {
-	color: #333;
-	border-bottom: 2px solid #007bff;
-}
-
-.main-content #user-balance {
-	font-size: 24px;
-	color: #007bff;
-}
-
-.main-content ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-.main-content ul li {
-	padding: 8px;
-	border-bottom: 1px solid #ddd;
-}
-
-@media (max-width: 768px) {
-}
 
 @media (max-width: 800px) {
 	.main-content {
 		margin-top: 80px;
-		padding: 48px;
+		padding: 32px;
 	}
 
 	.user-dashboard {
@@ -122,12 +86,6 @@ h6 {
 }
 
 @media screen and (max-width: 600px) {
-	.main-content {
-		padding: 32px;
-	}
-}
-
-@media screen and (max-width: 400px) {
 	.main-content {
 		padding: 16px;
 	}

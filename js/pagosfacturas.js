@@ -1,57 +1,56 @@
-// Validamos formulario de pago
 const formulario = document.querySelector('.pagos form');
-formulario.addEventListener('submit', function(event) {
-    event.preventDefault();
+formulario.addEventListener('submit', function (event) {
+	event.preventDefault();
+	const usuarioActual = localStorage.getItem('usuarioActual');
+	const usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
-    const numeroFactura = document.getElementById('numero-factura').value;
-    const monto = document.getElementById('monto').value;
-    const metodoPago = document.getElementById('metodo-pago').value;
+	const numeroFactura = document.getElementById('numero-factura').value;
+	const monto = parseFloat(document.getElementById('monto').value);
+	const metodoPago = document.getElementById('metodo-pago').value;
 
-    // validamos campos
-    if (numeroFactura === '' || monto === '' || metodoPago === '') {
-        mostrarError("Todos los campos son obligatorios");
-        return;
-    }
+	// validamos campos
+	if (numeroFactura === '' || monto === '' || metodoPago === '') {
+		mostrarError('Todos los campos son obligatorios');
+		return;
+	}
 
-    mostrarExito("Pago realizado con éxito");
+	if (monto <= 0) {
+		mostrarError('El monto mínimo debe ser mayor a 0');
+		return;
+	}
+
+	// validamos si el usuario tiene suficiente saldo para realizar el pago
+	if (usuarios[usuarioActual].saldo >= monto) {
+		// actualizamos el saldo del usuario
+		usuarios[usuarioActual].saldo -= monto;
+
+		// registramos el pago en el historial de pagos
+		usuarios[usuarioActual].historialPagos.push({
+			numero: numeroFactura,
+			monto: monto,
+			metodo: metodoPago,
+			fecha: new Date().toISOString().slice(0, 10) // Formato YYYY-MM-DD
+		});
+
+		actualizarUsuariosEnLocalStorage(usuarios);
+		mostrarExito('Pago realizado con éxito');
+	} else {
+		mostrarError('Saldo insuficiente para realizar el pago.');
+	}
 });
 
 function mostrarError(mensaje) {
-    // evitamos msj duplicados
-    if (document.querySelector('.error')) {
-        return;
-    }
-
-    //mostrar msj error
-    const alerta = document.createElement('p');
-    alerta.textContent = mensaje;
-    alerta.classList.add('error');
-
-    // insertamos el msj al final 
-    formulario.appendChild(alerta);
-
-    // Eliminamos despues de 3 segundos
-    setTimeout(() => {
-        alerta.remove();
-    }, 3000);
+	const alerta = document.createElement('p');
+	alerta.textContent = mensaje;
+	alerta.classList.add('error');
+	formulario.appendChild(alerta);
+	setTimeout(() => alerta.remove(), 3000);
 }
 
 function mostrarExito(mensaje) {
-    // que los mensajes no se dupliquen
-    if (document.querySelector('.exito')) {
-        return;
-    }
-
-    // mostrar el msj correcto
-    const alerta = document.createElement('p');
-    alerta.textContent = mensaje;
-    alerta.classList.add('exito');
-
-    // insertamos el msj al final 
-    formulario.appendChild(alerta);
-
-    // Eliminamos despues de 3 segundos
-    setTimeout(() => {
-        alerta.remove();
-    }, 3000);
+	const alerta = document.createElement('p');
+	alerta.textContent = mensaje;
+	alerta.classList.add('exito');
+	formulario.appendChild(alerta);
+	setTimeout(() => alerta.remove(), 3000);
 }

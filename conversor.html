@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Banking | Tu home banking de confianza</title>
-		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.ico" />
+		<title>Conversor de Divisas</title>
 		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./css/conversor.css" />
+		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.ico" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
 			rel="stylesheet" />
@@ -17,7 +18,7 @@
 	</head>
 	<body>
 		<header class="header">
-			<a href="index.html" aria-label="Volver al inicio">
+			<a href="#" aria-label="Volver al inicio">
 				<img src="./imagenes/banking-logo.png" alt="Banking Logo" />
 			</a>
 			<div class="navigation">
@@ -31,13 +32,13 @@
 					<button aria-label="Notificaciones">
 						<div class="material-symbols-outlined">notifications</div>
 					</button>
-					<button aria-label="Perfil de usuario" class="user-profile">
+					<a aria-label="Perfil de usuario" class="user-profile" href="./cuentas.html">
 						<div class="material-symbols-outlined user-image">account_circle</div>
 						<div class="user-options">
 							<span>Usuario nuevo</span>
 							<div class="material-symbols-outlined expand">expand_more</div>
 						</div>
-					</button>
+					</a>
 				</div>
 				<div class="nav-mobile">
 					<button class="nav-mobile__button">
@@ -54,68 +55,68 @@
 					>Ingreso <span class="plus-sign">+</span></a
 				>
 				<li>
-					<a href="index.html" data-form="inicio">
-						<span class="material-symbols-outlined icon "> home</span> Inicio
-					</a>
+					<a href="index.html"> <span class="material-symbols-outlined icon "> home</span> Inicio </a>
 				</li>
 				<li>
-					<a href="transferencias.html" data-form="transferencias">
+					<a href="transferencias.html">
 						<span class="material-symbols-outlined  icon ">account_balance</span> Transferencias
 					</a>
 				</li>
 				<li>
-					<a href="pagos.html" data-form="pagos">
+					<a href="pagos.html">
 						<span class="material-symbols-outlined  icon">order_approve </span>Pagos de Facturas
 					</a>
 				</li>
 				<li>
-					<a href="prestamos.html" data-form="prestamos"
-						><span class="material-symbols-outlined  icon">paid</span> Solicitar Préstamo
-					</a>
-				</li>
-				<li>
-					<a href="simulador.html" data-form="prestamos"
-						><span class="material-symbols-outlined  icon">calculate</span> Simular Préstamo
-					</a>
+					<a href="prestamos.html"><span class="material-symbols-outlined  icon">paid</span> Solicitar Préstamo </a>
 				</li>
 				<li>
 					<a href="conversor.html"><span class="material-symbols-outlined  icon">currency_exchange</span> Conversor </a>
 				</li>
 			</ul>
 		</aside>
-		<main class="main-content" id="main-content">
-			<!-- <p>Selecciona una opción del menú para ver el formulario.</p>  -->
+		<main class="main-content">
+			<section class="converter">
+				<h1>Conversor de Divisas</h1>
+
+				<div class="conversion-form">
+					<div class="input-group">
+						<label for="cantidad">Importe:</label>
+						<input
+							type="number"
+							id="cantidad"
+							name="cantidad"
+							min="0"
+							value="1"
+							oninput="actualizarValor(this.value)" />
+						<span id="valor">1</span>
+					</div>
+
+					<div class="input-group">
+						<label for="de">De:</label>
+						<select id="de" name="de" onchange="convertir()">
+							<option value="ARS">Peso Argentino - ARS</option>
+							<option value="USD">Dólar Blue - USD</option>
+							<option value="EUR">Euro - EUR</option>
+						</select>
+					</div>
+
+					<div class="input-group">
+						<label for="a">A:</label>
+						<select id="a" name="a" onchange="convertir()">
+							<option value="ARS">Peso Argentino - ARS</option>
+							<option value="USD">Dólar Blue - USD</option>
+							<option value="EUR">Euro - EUR</option>
+						</select>
+					</div>
+				</div>
+
+				<button class="convert-button" onclick="convertir()">Convertir</button>
+
+				<h2 id="resultado">Resultado: $0.00</h2>
+			</section>
 		</main>
-		<footer>
-			<div class="footer-contenido">
-				<div class="logo">
-					<div class="imagen-footer">
-						<a href="index.html"><img src="imagenes/banking-isologotipoai.png" alt="Banking Logo" /></a>
-					</div>
-					<div class="copyright">
-						<p>
-							&copy; 2024 Banking Inc. Todos los <br />
-							derechos reservados.
-						</p>
-					</div>
-				</div>
-				<div class="enlaces">
-					<h2 class="footer-titulo">LEGAL</h2>
-					<a href="#">Terminos y condiciones</a>
-					<a href="#">Politica de privacidad</a>
-				</div>
-				<div class="enlaces">
-					<h2 class="footer-titulo">ENLACES</h2>
-					<a href="transferencias.html">Transferencias</a>
-					<a href="pagos.html">Pagos de facturas</a>
-					<a href="prestamos.html">Solicitar prestamo</a>
-				</div>
-				<div class="redes">
-					<a href="https://www.facebook.com/"><img src="iconos/icono-facebook.svg" alt="Ingresar a Facebook" /></a>
-					<a href="https://github.com/"><img src="iconos/icono-github.svg" alt="Ingresar a GitHub" /></a>
-					<a href="https://www.instagram.com/"><img src="iconos/icono-instagram.svg" alt="Ingresar a Instagram" /></a>
-				</div>
-			</div>
-		</footer>
+
+		<script src="./js/conversor.js"></script>
 	</body>
 </html>

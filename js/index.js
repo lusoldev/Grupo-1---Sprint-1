@@ -4,26 +4,39 @@ function recuperarUsuariosDeLocalStorage() {
 	if (!usuarios) {
 		// Si no hay usuarios, crea un usuario demo con datos de ejemplo
 		const usuarioDemo = {
-			Demo: {
-				nombre: 'Demo',
-				password: 'demo123',
-				saldo: 1000,
-				historialTransferencias: [
-					{ numero: '2024-08-15', monto: 200, destinatario: 'Proveedor A', descripcion: 'Pago de servicios' },
-					{ numero: '2024-08-20', monto: 150, destinatario: 'Proveedor B', descripcion: 'Compra de material' }
-				],
-				historialPagos: [
-					{ numero: '14231', monto: 100, metodo: 'Tarjeta de crédito' },
-					{ numero: '13521', monto: 50, metodo: 'Transferencia bancaria' }
-				],
-				historialPrestamos: [
-					{
-						numero: '1',
-						monto: 5000,
-						tasaInteres: '5%'
-					}
-				]
-			}
+			nombre: 'Demo',
+			password: '1234',
+			saldo: 1000,
+			historialTransferencias: [
+				{
+					fecha: '2024-08-15',
+					monto: 200,
+					esIngreso: true,
+					emisor: 'Proveedor A',
+					receptor: 'Demo',
+					descripcion: 'Pago de servicios'
+				},
+				{
+					fecha: '2024-08-20',
+					monto: 150,
+					esIngreso: true,
+					emisor: 'Proveedor B',
+					receptor: 'Demo',
+					descripcion: 'Compra de material'
+				}
+			],
+			historialPagos: [
+				{ fecha: '2024-08-21', numero: '14231', monto: 100, metodo: 'Tarjeta de crédito' },
+				{ fecha: '2024-08-22', numero: '13521', monto: 50, metodo: 'Transferencia bancaria' }
+			],
+			historialPrestamos: [
+				{
+					fecha: '2024-08-21',
+					numero: '1',
+					monto: 5000,
+					tasaInteres: '5%'
+				}
+			]
 		};
 		localStorage.setItem('usuarios', JSON.stringify(usuarioDemo));
 		localStorage.setItem('usuarioActual', 'Demo');
@@ -77,18 +90,33 @@ function cerrarSesionYVolverADemo() {
 	if (!usuarios['Demo']) {
 		usuarios['Demo'] = {
 			nombre: 'Demo',
-			password: 'demo123',
+			password: '1234',
 			saldo: 1000,
 			historialTransferencias: [
-				{ fecha: '2024-08-15', monto: 200, destinatario: 'Proveedor A', descripcion: 'Pago de servicios' },
-				{ fecha: '2024-08-20', monto: 150, destinatario: 'Proveedor B', descripcion: 'Compra de material' }
+				{
+					fecha: '2024-08-15',
+					esIngreso: true,
+					monto: 200,
+					emisor: 'Proveedor A',
+					receptor: 'Demo',
+					descripcion: 'Pago de servicios'
+				},
+				{
+					fecha: '2024-08-20',
+					esIngreso: false,
+					monto: 150,
+					emisor: 'Proveedor B',
+					receptor: 'Demo',
+					descripcion: 'Compra de material'
+				}
 			],
 			historialPagos: [
-				{ numero: '14231', monto: 100, metodo: 'Tarjeta de crédito' },
-				{ numero: '13521', monto: 50, metodo: 'Transferencia bancaria' }
+				{ fecha: '2024-08-21', numero: '14231', monto: 100, metodo: 'Tarjeta de crédito' },
+				{ fecha: '2024-08-22', numero: '13521', monto: 50, metodo: 'Transferencia bancaria' }
 			],
 			historialPrestamos: [
 				{
+					fecha: '2024-08-21',
 					numero: '1',
 					monto: 5000,
 					tasaInteres: '5%'
