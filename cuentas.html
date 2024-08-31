@@ -19,8 +19,9 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	</head>
 	<body>
+		<div class="loader"></div>
 		<header class="header">
-			<a href="index.html" aria-label="Volver al inicio">
+			<a href="#" aria-label="Volver al inicio">
 				<img src="./imagenes/banking-logo.png" alt="Banking Logo" />
 			</a>
 			<div class="navigation">
@@ -34,13 +35,13 @@
 					<button aria-label="Notificaciones">
 						<div class="material-symbols-outlined">notifications</div>
 					</button>
-					<button aria-label="Perfil de usuario" class="user-profile">
+					<a aria-label="Perfil de usuario" class="user-profile" href="./cuentas.html">
 						<div class="material-symbols-outlined user-image">account_circle</div>
 						<div class="user-options">
 							<span>Usuario nuevo</span>
 							<div class="material-symbols-outlined expand">expand_more</div>
 						</div>
-					</button>
+					</a>
 				</div>
 				<div class="nav-mobile">
 					<button class="nav-mobile__button">
@@ -53,7 +54,7 @@
 		<aside class="aside">
 			<!-- <span class="material-symbols-outlined"> menu</span>  -->
 			<ul>
-				<a class="register-button" id="account-action" href="./cuentas.html">Volver al inicio</a>
+				<a class="register-button" id="account-action" href="./index.html">⬅ Volver</a>
 				<li>
 					<a href="index.html" data-form="inicio">
 						<span class="material-symbols-outlined icon "> home</span> Inicio

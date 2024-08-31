@@ -72,19 +72,6 @@
 	transition: background-color 0.3s ease;
 }
 
-@media (max-width: 600px) {
-	.cuentas {
-		padding: 20px;
-		margin: 20px;
-	}
-
-	.cuentas__form-group input,
-	.cuentas__form-group select,
-	.cuentas__form-group button {
-		font-size: 14px;
-	}
-}
-
 /* css mensaje error */
 .error {
 	padding: 10px;
@@ -97,3 +84,14 @@
 	color: #fff;
 }
 
+@media (max-width: 600px) {
+	.cuentas {
+		padding: 16px;
+	}
+
+	.cuentas__form-group input,
+	.cuentas__form-group select,
+	.cuentas__form-group button {
+		font-size: 14px;
+	}
+}

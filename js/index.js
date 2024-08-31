@@ -32,13 +32,14 @@ function recuperarUsuariosDeLocalStorage() {
 			historialPrestamos: [
 				{
 					fecha: '2024-08-21',
-					numero: '1',
-					monto: 5000,
-					tasaInteres: '5%'
+					tipo: 'Préstamo Personal',
+					monto: 25000,
+					tasaInteres: 5,
+					plazo: 11
 				}
 			]
 		};
-		localStorage.setItem('usuarios', JSON.stringify(usuarioDemo));
+		localStorage.setItem('usuarios', JSON.stringify({ demo: usuarioDemo }));
 		localStorage.setItem('usuarioActual', 'Demo');
 		return usuarioDemo;
 	}
@@ -56,7 +57,7 @@ function actualizarNombreUsuarioEnHeader() {
 	const usuarioActual = localStorage.getItem('usuarioActual');
 	const usuario = usuarios[usuarioActual];
 	const elementoNombreUsuario = document.querySelector('.user-options span');
-	elementoNombreUsuario.textContent = usuario ? usuario.nombre : 'Usuario nuevo';
+	elementoNombreUsuario.textContent = usuario ? usuario.nombre : 'Demo';
 }
 
 // Gestiona el texto del botón de cuenta según el estado del usuario
@@ -117,9 +118,10 @@ function cerrarSesionYVolverADemo() {
 			historialPrestamos: [
 				{
 					fecha: '2024-08-21',
-					numero: '1',
-					monto: 5000,
-					tasaInteres: '5%'
+					tipo: 'Préstamo Personal',
+					monto: 25000,
+					tasaInteres: 5,
+					plazo: 11
 				}
 			]
 		};
@@ -131,3 +133,13 @@ function cerrarSesionYVolverADemo() {
 
 actualizarNombreUsuarioEnHeader();
 actualizarBotonCuenta();
+
+window.addEventListener('load', () => {
+	const loader = document.querySelector('.loader');
+
+	loader.classList.add('loader-hidden');
+
+	loader.addEventListener('transitionend', () => {
+		loader.remove();
+	});
+});

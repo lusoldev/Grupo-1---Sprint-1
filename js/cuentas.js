@@ -23,7 +23,7 @@ function registrarUsuario() {
 		return;
 	}
 
-	usuarios[nombreUsuario] = {
+	usuarios[nombreUsuario.toLowerCase()] = {
 		nombre: nombreUsuario,
 		password: contraseña,
 		saldo: saldoInicial,
@@ -80,7 +80,7 @@ function iniciarSesion() {
 
 // Validar form
 const formulariovalidar = document.querySelector('#form-acceso');
-formulariovalidar.addEventListener('submit', function(event) {
+formulariovalidar.addEventListener('submit', function (event) {
 	event.preventDefault();
 
 	const nombreUsuario = document.getElementById('nombre-usuario').value;
@@ -89,7 +89,7 @@ formulariovalidar.addEventListener('submit', function(event) {
 
 	// si los campos siguen vacios mostrar mensaje
 	if (nombreUsuario === '' || contraseña === '') {
-		mostrarError("Todos los campos son obligatorios");
+		mostrarError('Todos los campos son obligatorios');
 		return;
 	}
 

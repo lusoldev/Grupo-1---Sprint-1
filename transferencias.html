@@ -16,8 +16,9 @@
 		<script src="./js/index.js" defer></script>
 	</head>
 	<body>
+		<div class="loader"></div>
 		<header class="header">
-			<a href="index.html" aria-label="Volver al inicio">
+			<a href="#" aria-label="Volver al inicio">
 				<img src="./imagenes/banking-logo.png" alt="Banking Logo" />
 			</a>
 			<div class="navigation">
@@ -31,13 +32,13 @@
 					<button aria-label="Notificaciones">
 						<div class="material-symbols-outlined">notifications</div>
 					</button>
-					<button aria-label="Perfil de usuario" class="user-profile">
+					<a aria-label="Perfil de usuario" class="user-profile" href="./cuentas.html">
 						<div class="material-symbols-outlined user-image">account_circle</div>
 						<div class="user-options">
 							<span>Usuario nuevo</span>
 							<div class="material-symbols-outlined expand">expand_more</div>
 						</div>
-					</button>
+					</a>
 				</div>
 				<div class="nav-mobile">
 					<button class="nav-mobile__button">

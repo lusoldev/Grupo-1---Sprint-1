@@ -69,31 +69,6 @@
 	transition: background-color 0.3s ease;
 }
 
-@media screen and (max-width: 800px) {
-	.pagos {
-		padding: 48px;
-	}
-}
-
-@media (max-width: 600px) {
-	.pagos {
-		padding: 32px;
-		margin: 20px;
-	}
-
-	.pagos__form-group input,
-	.pagos__form-group select,
-	.pagos__form-group button {
-		font-size: 14px;
-	}
-}
-
-@media (max-width: 400px) {
-	.pagos {
-		padding: 16px;
-	}
-}
-
 /*css al mensaje de pagos */
 .error {
 	padding: 10px;
@@ -115,4 +90,22 @@
 	text-align: center;
 	background-color: #28a745;
 	color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+	.pagos {
+		padding: 48px;
+	}
+}
+
+@media (max-width: 600px) {
+	.pagos {
+		padding: 16px;
+	}
+
+	.pagos__form-group input,
+	.pagos__form-group select,
+	.pagos__form-group button {
+		font-size: 14px;
+	}
 }

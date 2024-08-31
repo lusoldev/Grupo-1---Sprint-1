@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Solicitar un Prestamo | Banking</title>
 		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./css/prestamos.css" />
 		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.ico" />
 		<!-- Iconos menus -->
 		<link
@@ -18,11 +19,12 @@
 		<script src="./js/prestamos.js" defer></script>
 	</head>
 	<body>
+		<div class="loader"></div>
 		<header class="header">
-			<a href="index.html" aria-label="Volver al inicio">
+			<a href="#" aria-label="Volver al inicio">
 				<img src="./imagenes/banking-logo.png" alt="Banking Logo" />
 			</a>
-			<nav class="navigation">
+			<div class="navigation">
 				<div class="search-bar">
 					<input type="text" placeholder="Buscar" aria-label="Buscar" />
 					<button class="search-button" aria-label="Buscar">
@@ -31,15 +33,15 @@
 				</div>
 				<div class="header-icons">
 					<button aria-label="Notificaciones">
-						<span class="material-symbols-outlined">notifications</span>
+						<div class="material-symbols-outlined">notifications</div>
 					</button>
-					<button aria-label="Perfil de usuario" class="user-profile">
-						<span class="material-symbols-outlined user-image">account_circle</span>
+					<a aria-label="Perfil de usuario" class="user-profile" href="./cuentas.html">
+						<div class="material-symbols-outlined user-image">account_circle</div>
 						<div class="user-options">
 							<span>Usuario nuevo</span>
-							<span class="material-symbols-outlined expand">expand_more</span>
+							<div class="material-symbols-outlined expand">expand_more</div>
 						</div>
-					</button>
+					</a>
 				</div>
 				<div class="nav-mobile">
 					<button class="nav-mobile__button">
@@ -47,7 +49,7 @@
 						<span class="material-symbols-outlined close-icon">close</span>
 					</button>
 				</div>
-			</nav>
+			</div>
 		</header>
 		<aside class="aside">
 			<ul>
@@ -97,7 +99,7 @@
 							<li>Monto máximo: $100.000</li>
 							<li>Plazo: Hasta 24 meses</li>
 						</ul>
-						<button onclick="openSimulator('Préstamo Personal', 12)">Simular</button>
+						<button onclick="openSimulator('Préstamo Personal', 12)">Seleccionar</button>
 					</div>
 					<div class="loan-card">
 						<h3>Préstamo Hipotecario</h3>
@@ -106,7 +108,7 @@
 							<li>Monto máximo: $500.000</li>
 							<li>Plazo: Hasta 48 meses</li>
 						</ul>
-						<button onclick="openSimulator('Préstamo Hipotecario', 8)">Simular</button>
+						<button onclick="openSimulator('Préstamo Hipotecario', 8)">Seleccionar</button>
 					</div>
 					<div class="loan-card">
 						<h3>Préstamo Prendario</h3>
@@ -115,11 +117,11 @@
 							<li>Monto máximo: $50.000</li>
 							<li>Plazo: Hasta 12 meses</li>
 						</ul>
-						<button onclick="openSimulator('Préstamo Automotriz', 9)">Simular</button>
+						<button onclick="openSimulator('Préstamo Automotriz', 9)">Seleccionar</button>
 					</div>
 				</div>
 				<div class="loan-simulator">
-					<h2>Simulador de Préstamos</h2>
+					<h2>Solicitar un Préstamo</h2>
 					<form id="simulator-form">
 						<div class="form-group">
 							<label for="loan-type">Tipo de Préstamo:</label>
@@ -137,7 +139,12 @@
 							<label for="term">Plazo (meses):</label>
 							<input type="number" id="term" name="term" placeholder="Ingrese el plazo en meses" required />
 						</div>
-						<button type="button" onclick="calculateLoan()">Calcular</button>
+						<div class="form-buttons">
+							<button class="request-loan" type="button" onclick="submitLoan()">Solicitar</button>
+							<button class="calculate-loan" type="button" onclick="calculateLoan()">
+								Calcular <span class="material-symbols-outlined  icon">calculate</span>
+							</button>
+						</div>
 					</form>
 					<div id="results">
 						<p id="monthly-payment"></p>

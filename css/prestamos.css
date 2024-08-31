@@ -57,10 +57,6 @@
 	width: 100%;
 }
 
-.loan-card button:hover {
-	background-color: #0283e9;
-}
-
 .loan-simulator {
 	background-color: #ffffff;
 	border: 2px solid #01cdfb;
@@ -98,20 +94,31 @@
 	border-color: #01cdfb;
 }
 
-button[type='button'] {
-	background-color: #0283e9;
+.form-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.request-loan,
+.calculate-loan {
 	border: none;
-	color: #ffffff;
 	padding: 12px 24px;
-	text-align: center;
+	transition: background-color 0.3s;
 	font-size: 16px;
 	border-radius: 4px;
+}
+
+.request-loan {
+	background-color: #0283e9;
+	color: #ffffff;
+	text-align: center;
+
 	cursor: pointer;
-	transition: background-color 0.3s;
 	width: 100%;
 }
 
-button[type='button']:hover {
+.request-loan:hover {
 	background-color: #0239d6;
 }
 
@@ -132,6 +139,28 @@ button[type='button']:hover {
 #results p {
 	font-size: 18px;
 	color: #0283e9;
+}
+
+.error {
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #f00;
+	color: #fff;
+}
+
+.exito {
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	background-color: #28a745;
+	color: #fff;
 }
 
 @media (max-width: 1024px) {
@@ -159,13 +188,6 @@ button[type='button']:hover {
 }
 
 @media (max-width: 600px) {
-	.prestamos {
-		padding: 32px;
-		margin: 20px;
-	}
-}
-
-@media (max-width: 400px) {
 	.prestamos {
 		padding: 16px;
 	}

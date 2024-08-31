@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Simular un Prestamo | Banking</title>
 		<link rel="stylesheet" href="./css/index.css" />
+		<link rel="stylesheet" href="./css/prestamos.css" />
+
 		<link rel="icon" type="image/x-icon" href="/imagenes/favicon.ico" />
 		<!-- Iconos menus -->
 		<link
@@ -18,11 +20,12 @@
 		<script src="./js/simulador.js" defer></script>
 	</head>
 	<body>
+		<div class="loader"></div>
 		<header class="header">
-			<a href="index.html" aria-label="Volver al inicio">
+			<a href="#" aria-label="Volver al inicio">
 				<img src="./imagenes/banking-logo.png" alt="Banking Logo" />
 			</a>
-			<nav class="navigation">
+			<div class="navigation">
 				<div class="search-bar">
 					<input type="text" placeholder="Buscar" aria-label="Buscar" />
 					<button class="search-button" aria-label="Buscar">
@@ -31,15 +34,15 @@
 				</div>
 				<div class="header-icons">
 					<button aria-label="Notificaciones">
-						<span class="material-symbols-outlined">notifications</span>
+						<div class="material-symbols-outlined">notifications</div>
 					</button>
-					<button aria-label="Perfil de usuario" class="user-profile">
-						<span class="material-symbols-outlined user-image">account_circle</span>
+					<a aria-label="Perfil de usuario" class="user-profile" href="./cuentas.html">
+						<div class="material-symbols-outlined user-image">account_circle</div>
 						<div class="user-options">
 							<span>Usuario nuevo</span>
-							<span class="material-symbols-outlined expand">expand_more</span>
+							<div class="material-symbols-outlined expand">expand_more</div>
 						</div>
-					</button>
+					</a>
 				</div>
 				<div class="nav-mobile">
 					<button class="nav-mobile__button">
@@ -47,7 +50,7 @@
 						<span class="material-symbols-outlined close-icon">close</span>
 					</button>
 				</div>
-			</nav>
+			</div>
 		</header>
 		<aside class="aside">
 			<ul>
@@ -78,6 +81,9 @@
 					<a href="simulador.html" data-form="prestamos"
 						><span class="material-symbols-outlined  icon">calculate</span> Simular Préstamo
 					</a>
+				</li>
+				<li>
+					<a href="conversor.html"><span class="material-symbols-outlined  icon">currency_exchange</span> Conversor </a>
 				</li>
 			</ul>
 		</aside>
@@ -134,7 +140,9 @@
 							<label for="term">Plazo (meses):</label>
 							<input type="number" id="term" name="term" placeholder="Ingrese el plazo en meses" required />
 						</div>
-						<button type="button" onclick="calculateLoan()">Calcular</button>
+						<button class="request-loan" type="button" onclick="calculateLoan()">
+							Calcular <span class="material-symbols-outlined  icon">calculate</span>
+						</button>
 					</form>
 					<div id="results">
 						<p id="monthly-payment"></p>

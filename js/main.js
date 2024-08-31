@@ -1,13 +1,15 @@
 // Carga y muestra la información del usuario al cargar la página
 const usuarios = recuperarUsuariosDeLocalStorage(); // Recupera todos los usuarios de localStorage
 const usuarioActual = localStorage.getItem('usuarioActual'); // Obtiene el usuario actual
-const datosUsuario = usuarios[usuarioActual] || usuarios; // Accede a los datos del usuario actual
+const datosUsuario = usuarios[usuarioActual.toLowerCase()];
+// Accede a los datos del usuario actual
 if (datosUsuario) {
 	saludarUsuario(datosUsuario.nombre);
 	const saldoNumerico = parseFloat(datosUsuario.saldo); // Convierte el saldo a número para asegurar la precisión
 	document.getElementById('user-balance').textContent = `$${saldoNumerico.toFixed(2)}`; // Formatea y muestra el saldo
 	cargarHistorial(datosUsuario.historialTransferencias, 'transfer-history', 'transfer'); // Carga el historial de transferencias
 	cargarHistorial(datosUsuario.historialPagos, 'payment-history', 'payment'); // Carga el historial de pagos
+	console.log(datosUsuario.historialPrestamos);
 	cargarHistorial(datosUsuario.historialPrestamos, 'loan-history', 'loan'); // Carga el historial de préstamos
 }
 
@@ -30,8 +32,8 @@ function cargarHistorial(historial, elementoId, tipo) {
 				break;
 			case 'loan':
 				ul.innerHTML += `<li class="loan">
-				<span>N°: ${item.numero}</span> 
-				<span class="amount">$${item.monto}${item.tasaInteres ? ' al ' + item.tasaInteres : ''}</span></li>`;
+				<span>${item.tipo} - ${item.tasaInteres}% - ${item.plazo} meses</span> 
+				<span class="amount">$${item.monto}</span></li>`;
 				break;
 		}
 	});
