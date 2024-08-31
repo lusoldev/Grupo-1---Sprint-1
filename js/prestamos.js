@@ -45,9 +45,10 @@ function submitLoan() {
 			plazo: term
 		});
 		actualizarUsuariosEnLocalStorage(usuarios);
-		mostrarExito();
+		mostrarExito('Prestamo realizado con éxito.');
+		formulario.reset();
 	} else {
-		mostrarError();
+		mostrarError('El prestamo no ha podido procesarse correctamente.');
 	}
 }
 
