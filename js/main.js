@@ -9,7 +9,6 @@ if (datosUsuario) {
 	document.getElementById('user-balance').textContent = `$${saldoNumerico.toFixed(2)}`; // Formatea y muestra el saldo
 	cargarHistorial(datosUsuario.historialTransferencias, 'transfer-history', 'transfer'); // Carga el historial de transferencias
 	cargarHistorial(datosUsuario.historialPagos, 'payment-history', 'payment'); // Carga el historial de pagos
-	console.log(datosUsuario.historialPrestamos);
 	cargarHistorial(datosUsuario.historialPrestamos, 'loan-history', 'loan'); // Carga el historial de préstamos
 }
 
