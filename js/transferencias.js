@@ -1,7 +1,6 @@
 const formulario = document.querySelector('.transferencias form');
 formulario.addEventListener('submit', function (event) {
 	event.preventDefault();
-	console.log('hola');
 	const usuarioActual = localStorage.getItem('usuarioActual');
 	const usuarios = JSON.parse(localStorage.getItem('usuarios'));
 
