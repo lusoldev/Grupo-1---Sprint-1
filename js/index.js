@@ -14,7 +14,7 @@ function recuperarUsuariosDeLocalStorage() {
 					esIngreso: true,
 					emisor: 'Proveedor A',
 					receptor: 'Demo',
-					descripcion: 'Pago de servicios'
+					motivo: 'Pago de servicios'
 				},
 				{
 					fecha: '2024-08-20',
@@ -22,7 +22,7 @@ function recuperarUsuariosDeLocalStorage() {
 					esIngreso: true,
 					emisor: 'Proveedor B',
 					receptor: 'Demo',
-					descripcion: 'Compra de material'
+					motivo: 'Compra de material'
 				}
 			],
 			historialPagos: [
@@ -100,7 +100,7 @@ function cerrarSesionYVolverADemo() {
 					monto: 200,
 					emisor: 'Proveedor A',
 					receptor: 'Demo',
-					descripcion: 'Pago de servicios'
+					motivo: 'Pago de servicios'
 				},
 				{
 					fecha: '2024-08-20',
@@ -108,7 +108,7 @@ function cerrarSesionYVolverADemo() {
 					monto: 150,
 					emisor: 'Proveedor B',
 					receptor: 'Demo',
-					descripcion: 'Compra de material'
+					motivo: 'Compra de material'
 				}
 			],
 			historialPagos: [

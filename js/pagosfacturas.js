@@ -20,12 +20,12 @@ formulario.addEventListener('submit', function (event) {
 	}
 
 	// validamos si el usuario tiene suficiente saldo para realizar el pago
-	if (usuarios[usuarioActual].saldo >= monto) {
+	if (usuarios[usuarioActual.toLocaleLowerCase()].saldo >= monto) {
 		// actualizamos el saldo del usuario
-		usuarios[usuarioActual].saldo -= monto;
+		usuarios[usuarioActual.toLocaleLowerCase()].saldo -= monto;
 
 		// registramos el pago en el historial de pagos
-		usuarios[usuarioActual].historialPagos.push({
+		usuarios[usuarioActual.toLocaleLowerCase()].historialPagos.push({
 			numero: numeroFactura,
 			monto: monto,
 			metodo: metodoPago,

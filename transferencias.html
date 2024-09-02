@@ -12,8 +12,10 @@
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" href="./css/transferencias.css" />
 		<script src="./js/header.js" defer></script>
 		<script src="./js/index.js" defer></script>
+		<script src="./js/transferencias.js" defer></script>
 	</head>
 	<body>
 		<div class="loader"></div>
@@ -85,7 +87,36 @@
 			</ul>
 		</aside>
 		<main class="main-content" id="main-content">
-			<!-- <p>Selecciona una opción del menú para ver el formulario.</p>  -->
+			<section class="transferencias">
+				<h2>Transferencias</h2>
+				<form action="/procesar-pago" method="post">
+					<div class="transferencias__form-group">
+						<label for="nombre-usuario">Nombre de usuario:</label>
+						<input
+							type="text"
+							id="nombre-usuario"
+							name="nombre-usuario"
+							placeholder="Ingrese el nombre de usuario"
+							required />
+					</div>
+					<div class="transferencias__form-group">
+						<label for="monto">Monto a Transferir:</label>
+						<input type="number" id="monto" name="monto" placeholder="Ingrese el monto" required />
+					</div>
+					<div class="transferencias__form-group">
+						<label for="motivo">Motivo:</label>
+						<select id="motivo" name="motivo" required>
+							<option value="">Varios</option>
+							<option value="tarjeta">Regalo</option>
+							<option value="tarjeta">Servicios</option>
+							<option value="transferencia">Otros</option>
+						</select>
+					</div>
+					<div class="transferencias__form-group">
+						<button type="submit">Realizar Transferencia</button>
+					</div>
+				</form>
+			</section>
 		</main>
 		<footer>
 			<div class="footer-contenido">

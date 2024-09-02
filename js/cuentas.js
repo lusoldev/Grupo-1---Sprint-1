@@ -74,7 +74,7 @@ function iniciarSesion() {
 		localStorage.setItem('usuarioActual', nombreUsuario);
 		window.location.href = 'index.html'; // Redirige al inicio
 	} else {
-		mostrarError('Campos obligatorios.');
+		mostrarError('Cuenta inexistente, por favor registrate.');
 	}
 }
 
