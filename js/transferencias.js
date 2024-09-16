@@ -44,9 +44,9 @@ formulario.addEventListener('submit', function (event) {
 			fecha: new Date().toISOString().slice(0, 10) // Formato YYYY-MM-DD
 		});
 		actualizarUsuariosEnLocalStorage(usuarios);
-		mostrarExito('Pago realizado con éxito');
+		mostrarExito('Transferencia realizada con éxito');
 	} else {
-		mostrarError('Saldo insuficiente para realizar el pago.');
+		mostrarError('Saldo insuficiente para realizar la transferencia.');
 	}
 });
 
