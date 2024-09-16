@@ -69,28 +69,26 @@
 	transition: background-color 0.3s ease;
 }
 
-/*css al mensaje de transferencias */
-.error {
-	padding: 10px;
-	margin-top: 10px;
-	border-radius: 5px;
-	font-size: 14px;
-	font-weight: bold;
-	text-align: center;
-	background-color: #f00;
-	color: #fff;
-}
+/*css al mensaje de transferencias error o exito */
 
 .exito {
+	color: white;
+	background-color: green;
 	padding: 10px;
 	margin-top: 10px;
 	border-radius: 5px;
-	font-size: 14px;
-	font-weight: bold;
-	text-align: center;
-	background-color: #28a745;
-	color: #fff;
 }
+
+
+.error {
+	color: white;
+	background-color: red;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+
+
 
 @media screen and (max-width: 800px) {
 	.transferencias {
